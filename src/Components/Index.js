@@ -3,29 +3,31 @@ import { useState, useEffect } from "react";
 import Supply from "./Supply";
 
 const API = process.env.REACT_APP_API_URL;
+console.log(API);
 
 export default function Index() {
-  const [supply, setSupply] = useState([]);
+  const [supplies, setSupplies] = useState([]);
 
   useEffect(() => {
     axios
-      .get(`${API}/supply`)
+      .get(`http://localhost:${API}/`)
       .then((response) => {
-        setSupply(response.data);
+        setSupplies(response.data);
       })
       .catch((e) => {
         console.warn("catch", e);
       });
   }, []);
-
+  console.log(supplies);
   return (
     <div className="index">
+      <header>Welcome to School Supply Application</header>
       <section>
         <table>
           <tbody>
-            {supply.map((supply) => {
+            {/* {supplies.map((supply) => {
               return <Supply key={supply.id} supply={supply} />;
-            })}
+            })} */}
           </tbody>
         </table>
       </section>

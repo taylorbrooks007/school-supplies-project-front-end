@@ -1,11 +1,31 @@
 import { useState } from "react";
 import "./NewSupply.css";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+
+const API = process.env.REACT_APP_API_URL;
+
 export default function NewSupply() {
+  let navigate = useNavigate();
+
+  const addSupply = (newSupply) => {
+    axios
+      .post(`${API}/supply`, newSupply)
+      .then(
+        () => {
+          navigate(`/supply`);
+        },
+        (error) => console.error(error)
+      )
+      .catch((c) => console.warn("catch", c));
+  };
+
   const [user, setUser] = useState({
     Name: "",
     img: "",
     Descripton: "",
     Brand: "",
+    Quantity: 0,
     Price: "",
   });
 
@@ -57,6 +77,13 @@ export default function NewSupply() {
             onChange={handleTextChange}
             id="brand"
           />
+          <label htmlFor="quantity">Quantity In Stock:</label>
+          <input
+            type="number"
+            value={user.quantity}
+            onChange={handleTextChange}
+            id="quantity"
+          />
           <label htmlFor="description">Descripton:</label>
           <input
             type="text"
@@ -66,7 +93,7 @@ export default function NewSupply() {
           />
           <label htmlFor="price">Price:</label>
           <input
-            type="number"
+            type="text"
             value={user.price}
             onChange={handleTextChange}
             id="price"

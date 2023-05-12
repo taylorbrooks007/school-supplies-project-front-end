@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import Supply from "./Supply";
+// import Supply from "./Supply";
 
 const API = process.env.REACT_APP_API_URL;
 console.log(API);
@@ -10,7 +10,7 @@ export default function Index() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:${API}/`)
+      .get(`http://localhost:${API}/supplies`)
       .then((response) => {
         setSupplies(response.data);
       })

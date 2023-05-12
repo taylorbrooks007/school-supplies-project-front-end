@@ -9,8 +9,9 @@ export default function NewSupply() {
   let navigate = useNavigate();
 
   const addSupply = (newSupply) => {
+    console.log(newSupply);
     axios
-      .post(`${API}/supply`, newSupply)
+      .post(`${API}/supplies`, newSupply)
       .then(
         () => {
           navigate(`/supply`);
@@ -20,33 +21,38 @@ export default function NewSupply() {
       .catch((c) => console.warn("catch", c));
   };
 
-  const [user, setUser] = useState({
-    Name: "",
-    img: "",
-    Descripton: "",
-    Brand: "",
-    Quantity: 0,
-    Price: "",
+  const [supply, setSupply] = useState({
+    name: "",
+    brand: "",
+    // image_url: "",
+    price: "",
+    quantity: 0,
+    descripton: "",
+    in_stock: "",
   });
 
   function handleSubmit(event) {
     event.preventDefault();
-    resetForm();
+    addSupply(supply);
+    // resetForm();
   }
 
   function handleTextChange(event) {
-    setUser({
-      ...user,
+    setSupply({
+      ...supply,
       [event.target.id]: event.target.value,
     });
   }
 
   function resetForm() {
-    setUser({
-      Name: "",
-      img: "",
-      Descripton: "",
-      Price: "",
+    setSupply({
+      name: "",
+      brand: "",
+      // image_url: "",
+      price: "",
+      quantity: 0,
+      descripton: "",
+      in_stock: "",
     });
   }
   return (
@@ -56,47 +62,61 @@ export default function NewSupply() {
       </header>
       <main>
         <form onSubmit={handleSubmit}>
-          <label htmlFor="Name">Name:</label>
+          <label htmlFor="name">Name:</label>
           <input
             type="text"
-            value={user.Name}
+            value={supply.name}
             onChange={handleTextChange}
-            id="Name"
+            id="name"
+            required
           />
           <label htmlFor="img">Img:</label>
           <input
             type="text"
-            value={user.Img}
+            value={supply.img}
             onChange={handleTextChange}
             id="img"
+            required
           />
           <label htmlFor="brand">Brand:</label>
           <input
             type="text"
-            value={user.Brand}
+            value={supply.brand}
             onChange={handleTextChange}
             id="brand"
+            required
           />
           <label htmlFor="quantity">Quantity In Stock:</label>
           <input
             type="number"
-            value={user.quantity}
+            value={supply.quantity}
             onChange={handleTextChange}
             id="quantity"
+            required
           />
           <label htmlFor="description">Descripton:</label>
           <input
             type="text"
-            value={user.description}
+            value={supply.description}
             onChange={handleTextChange}
             id="description"
+            required
           />
           <label htmlFor="price">Price:</label>
           <input
             type="text"
-            value={user.price}
+            value={supply.price}
             onChange={handleTextChange}
             id="price"
+            required
+          />
+          <label htmlFor="in_stock">In Stock:</label>
+          <input
+            type="text"
+            value={supply.in_stock}
+            onChange={handleTextChange}
+            id="in_stock"
+            required
           />
           <button>Submit</button>
           <br />

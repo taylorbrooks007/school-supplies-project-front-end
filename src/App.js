@@ -3,6 +3,8 @@ import Index from "./Components/Index";
 import NewSupply from "./Components/NewSupply";
 import Supply from "./Components/Supply";
 import Cart from "./Components/Cart";
+import Show from "./Components/Show";
+// import Edit from "./Components/Edit";
 import {
   BrowserRouter as Router,
   Routes,
@@ -24,8 +26,9 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/supply" element={<Supply />} />
+          <Route path="/supplies/:id" element={<Show />} />
           <Route path="/newsupply" element={<NewSupply />} />
+          {/* <Route path="/:id/edit" elemment={<Edit />} /> */}
           <Route path="/cart" element={<Cart />} />
         </Routes>
       </Router>

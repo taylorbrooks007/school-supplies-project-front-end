@@ -19,6 +19,7 @@ function App() {
   // will be an empty array
   const [total, setTotal] = useState(0);
   // will be a number to set total for cart price
+  //anything
 
   return (
     <div>

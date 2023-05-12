@@ -1,15 +1,16 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
+import "./SupplyDetails.css"
 
 const API = process.env.REACT_APP_API_URL;
 
-export function SupplyDetails() {
-  const [supply, setSupply] = useState([]);
+export default function SupplyDetails() {
+  const [supply, setSupply] = useState({});
   const { id } = useParams();
-  const navigate = useNavigate();
+ // const navigate = useNavigate();
 
   useEffect(() => {
     axios
@@ -21,16 +22,18 @@ export function SupplyDetails() {
         console.log(error);
       });
   }, [id]);
-  console.log(supply);
+
+  console.log(supply)
+
   return (
-    <div>
+    <div className="card">
       <img alt="supply.image_url" src={supply.image_url} />
-      <p>Price: {supply.price}</p>
+      {/* <p>Price: {supply.price}</p>
       <p>Product Description: {supply.description}</p>
       <p>Quantity In Stock: {supply.quantity}</p>
       <button>Add To Cart</button>
       <button>Edit Supply</button>
-      <button>DELETE SUPPLY</button>
+      <button>DELETE SUPPLY</button> */}
     </div>
   );
 }

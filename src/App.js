@@ -1,8 +1,7 @@
-import Navbar from "./components/Navbar";
+import Navbar from "./Components/Navbar";
 import Index from "./pages/Index";
 // import Cart from "./components/Cart";
 import Show from "./pages/Show";
-
 // import Edit from "./Components/Edit";
 import {
   BrowserRouter as Router,

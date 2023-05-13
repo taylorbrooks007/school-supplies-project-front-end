@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import SupplyDetails from "../components/SupplyDetails"
+import SupplyDetails from "../Components/SupplyDetails"
 
 export default function Show() {
   return (

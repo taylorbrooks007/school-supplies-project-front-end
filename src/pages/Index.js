@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const API = process.env.REACT_APP_API_URL;
 
-export default function Index() {
+export default function Index({handleCartTotal}) {
   const [supplies, setSupplies] = useState([]);
 
   useEffect(() => {
@@ -25,7 +25,7 @@ export default function Index() {
       <section className="cards">
         {supplies ? supplies.map((supply) => {
           return (  
-              <Supply supply={supply} key={supply.id}/>
+              <Supply supply={supply} key={supply.id} handleCartTotal={handleCartTotal}/>
           )
         }): null}
       </section>

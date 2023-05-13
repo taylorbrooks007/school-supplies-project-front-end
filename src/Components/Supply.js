@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-export default function Supply({supply, setTotal}) {
+export default function Supply({supply, handleCartTotal}) {
   return (
     <div className="card">
       <Link to={`/supplies/${supply.id}`}><h2>{supply.name}</h2></Link>
@@ -7,7 +7,7 @@ export default function Supply({supply, setTotal}) {
       <p><strong>Price:</strong> ${supply.price}</p>
       <p><strong>Product Description:</strong> {supply.description}</p>
       <p><strong>Quantity In Stock:</strong> {supply.quantity}</p>
-      <button>Add To Cart</button>
+      <button onClick={()=>handleCartTotal(supply.price, supply)}>Add To Cart</button>
     </div>
   );
 }

@@ -44,7 +44,7 @@ export default function SupplyDetails({handleCartTotal}) {
       <p>Price: ${supply.price}</p>
       <p>Product Description: {supply.description}</p>
       <p>Quantity In Stock: {supply.quantity}</p>
-      <button onClick={()=>handleCartTotal(supply.price)}>Add To Cart</button>
+      <button onClick={()=>handleCartTotal(supply.price, supply)}>Add To Cart</button>
       <Link to={`/supplies/${id}/edit`}>
         <button>Edit</button>
         </Link>

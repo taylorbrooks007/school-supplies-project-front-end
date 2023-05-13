@@ -1,10 +1,12 @@
 
 
-export default function Cart({total}) {
+export default function Cart({total, cart}) {
+  console.log(cart)
   return (
-  <div>
+  <div className="cart">
     <h1>Cart</h1>
-    <p>Total: ${total}</p>
+    {cart ? cart.map((item) => <p>{item.name}</p>) : null}
+    <p>Total: ${total.toFixed(2)}</p>
   </div>
   );
 }

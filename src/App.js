@@ -29,9 +29,13 @@ function App() {
   //   return sum 
   // }
 
-  function handleCartTotal(price){
-    setTotal(...total, price )
+  function handleCartTotal(price, name){
+    setTotal((total) => total + Number(price))
+    setCart(cart => [...cart, name] );
   }
+
+  console.log(cart)
+  
 
 
   return (
@@ -39,11 +43,11 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Index/>} />
+          <Route path="/" element={<Index handleCartTotal={handleCartTotal} />} />
           <Route path="/supplies/:id" element={<SupplyDetails handleCartTotal={handleCartTotal} />} />
           <Route path="/newsupply" element={<NewSupply />} />
           <Route path="supplies/:id/edit" element={<Edit />} />
-          <Route path="/cart" element={<Cart total={total}/>} />
+          <Route path="/cart" element={<Cart cart={cart} total={total}/>} />
         </Routes>
       </Router>
     </div>

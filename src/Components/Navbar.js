@@ -11,7 +11,10 @@ export default function Navbar() {
       </Link>
         <ul>
           <Link to="/NewSupply">
-            <button>Create New Supply</button>{" "}
+            <button>Create New Supply</button>
+          </Link>
+          <Link to="/cart">
+            <button>View Cart</button>
           </Link>
         </ul>
     </div>

@@ -11,6 +11,7 @@ import {
   Route,
 } from "react-router-dom";
 import "./App.css"
+import SupplyDetails from "./components/SupplyDetails";
 
 
 
@@ -21,16 +22,28 @@ function App() {
   // will be a number to set total for cart price
   //anything
 
+  // function getTotal(price){
+  //   let sum = 0;
+  //   sum+=price;
+  //   setTotal(sum)
+  //   return sum 
+  // }
+
+  function handleCartTotal(price){
+    setTotal(...total, price )
+  }
+
+
   return (
     <div>
       <Router>
         <Navbar />
         <Routes>
           <Route path="/" element={<Index/>} />
-          <Route path="/supplies/:id" element={<Show />} />
+          <Route path="/supplies/:id" element={<SupplyDetails handleCartTotal={handleCartTotal} />} />
           <Route path="/newsupply" element={<NewSupply />} />
           <Route path="supplies/:id/edit" element={<Edit />} />
-          <Route path="/cart" element={<Cart />} />
+          <Route path="/cart" element={<Cart total={total}/>} />
         </Routes>
       </Router>
     </div>

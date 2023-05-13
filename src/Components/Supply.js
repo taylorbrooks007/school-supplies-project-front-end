@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-export default function Supply({supply}) {
+export default function Supply({supply, setTotal}) {
   return (
     <div className="card">
       <Link to={`/supplies/${supply.id}`}><h2>{supply.name}</h2></Link>

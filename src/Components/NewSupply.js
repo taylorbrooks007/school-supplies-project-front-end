@@ -5,16 +5,16 @@ import axios from "axios";
 
 const API = process.env.REACT_APP_API_URL;
 
-export default function NewSupply() {
+export default function NewSupply(){
+  
   let navigate = useNavigate();
 
   const addSupply = (newSupply) => {
-    console.log(newSupply);
     axios
       .post(`${API}/supplies`, newSupply)
       .then(
         () => {
-          navigate(`/supply`);
+          navigate('/');
         },
         (error) => console.error(error)
       )
@@ -24,45 +24,40 @@ export default function NewSupply() {
   const [supply, setSupply] = useState({
     name: "",
     brand: "",
-    // image_url: "",
-    price: "",
+    image_url: "",
+    price: 0.00,
     quantity: 0,
-    descripton: "",
-    in_stock: "",
+    description: "",
+    in_stock: false,
   });
 
-  function handleSubmit(event) {
+  
+
+  function handleSubmit(event){
     event.preventDefault();
     addSupply(supply);
     // resetForm();
   }
 
-  function handleTextChange(event) {
+  function handleTextChange(event){
     setSupply({
       ...supply,
       [event.target.id]: event.target.value,
     });
   }
 
-  function resetForm() {
-    setSupply({
-      name: "",
-      brand: "",
-      // image_url: "",
-      price: "",
-      quantity: 0,
-      descripton: "",
-      in_stock: "",
-    });
-  }
+  const handleCheckboxChange = () => {
+    setSupply({ ...supply, in_stock: !supply.in_stock });
+  };
+
   return (
     <div>
       <header>
-        <h2>Create New Supply</h2>
+        <h2>Create New Product</h2>
       </header>
       <main>
         <form onSubmit={handleSubmit}>
-          <label htmlFor="name">Name:</label>
+          <label htmlFor="name">Name: </label>
           <input
             type="text"
             value={supply.name}
@@ -70,15 +65,14 @@ export default function NewSupply() {
             id="name"
             required
           />
-          <label htmlFor="img">Img:</label>
+          <label htmlFor="image_url">Image URL: </label>
           <input
             type="text"
-            value={supply.img}
+            value={supply.image_url}
             onChange={handleTextChange}
-            id="img"
-            required
+            id="image_url"
           />
-          <label htmlFor="brand">Brand:</label>
+          <label htmlFor="brand">Brand: </label>
           <input
             type="text"
             value={supply.brand}
@@ -86,7 +80,7 @@ export default function NewSupply() {
             id="brand"
             required
           />
-          <label htmlFor="quantity">Quantity In Stock:</label>
+          <label htmlFor="quantity">Quantity: </label>
           <input
             type="number"
             value={supply.quantity}
@@ -94,7 +88,7 @@ export default function NewSupply() {
             id="quantity"
             required
           />
-          <label htmlFor="description">Descripton:</label>
+          <label htmlFor="description">Descripton: </label>
           <input
             type="text"
             value={supply.description}
@@ -102,23 +96,25 @@ export default function NewSupply() {
             id="description"
             required
           />
-          <label htmlFor="price">Price:</label>
+          <label htmlFor="price">Price: </label>
           <input
             type="text"
             value={supply.price}
             onChange={handleTextChange}
             id="price"
+            step="0.01"
+            min="0" 
             required
           />
-          <label htmlFor="in_stock">In Stock:</label>
+          <label htmlFor="in_stock">In Stock: </label>
           <input
-            type="text"
-            value={supply.in_stock}
-            onChange={handleTextChange}
-            id="in_stock"
-            required
+          type="checkbox" 
+          id="in_stock" 
+          name="in_stock" 
+          checked={supply.in_stock}
+          onChange={handleCheckboxChange}
           />
-          <button>Submit</button>
+          <input type="submit"/>
           <br />
         </form>
       </main>

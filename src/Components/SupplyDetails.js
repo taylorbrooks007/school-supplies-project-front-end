@@ -1,16 +1,15 @@
 import { useState, useEffect } from "react";
-//import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-//import { useNavigate } from "react-router-dom";
-import "./SupplyDetails.css"
+import { Link } from "react-router-dom";
+
 
 const API = process.env.REACT_APP_API_URL;
 
-export default function SupplyDetails() {
+export default function SupplyDetails({handleCartTotal}) {
   const [supply, setSupply] = useState({});
   const { id } = useParams();
- // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
@@ -23,17 +22,33 @@ export default function SupplyDetails() {
       });
   }, [id]);
 
-  console.log(supply)
+  const handleDelete = () => {
+    deleteSupply();
+  };
+
+  const deleteSupply = () => {
+    axios
+      .delete(`${API}/supplies/${id}`)
+      .then(() => {
+        navigate(`/`);
+      })
+      .catch((e) => {
+        console.warn("catch:", e);
+      });
+  };
 
   return (
-    <div className="card">
-      <img alt="supply.image_url" src={supply.image_url} />
-      {/* <p>Price: {supply.price}</p>
+    <div className="supplyDetails">
+      <h2>{supply.name}</h2>
+      <img alt="image_url" src={supply.image_url} width="400px"/>
+      <p>Price: ${supply.price}</p>
       <p>Product Description: {supply.description}</p>
       <p>Quantity In Stock: {supply.quantity}</p>
-      <button>Add To Cart</button>
-      <button>Edit Supply</button>
-      <button>DELETE SUPPLY</button> */}
+      <button onClick={()=>handleCartTotal(supply.price, supply)}>Add To Cart</button>
+      <Link to={`/supplies/${id}/edit`}>
+        <button>Edit</button>
+        </Link>
+      <button onClick={handleDelete}>Delete</button>
     </div>
   );
 }

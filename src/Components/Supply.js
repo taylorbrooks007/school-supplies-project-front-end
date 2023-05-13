@@ -1,17 +1,12 @@
-import "./Supply.css";
-//import { Link } from "react-router-dom";
-export default function Supply({ supply }) {
-  // function handleClick(supply) {
-  //   setCart([...cart, supply]);
-  // }
-
+import { Link } from "react-router-dom";
+export default function Supply({supply}) {
   return (
     <div className="card">
-      <img alt="supply.image_url" src={supply.image_url} />
-
-      <p>Price: {supply.price}</p>
-      <p>Product Description: {supply.description}</p>
-      <p>Quantity In Stock: {supply.quantity}</p>
+      <Link to={`/supplies/${supply.id}`}><h2>{supply.name}</h2></Link>
+      <img alt={supply.name} src={supply.image_url} width="400px"/>
+      <p><strong>Price:</strong> ${supply.price}</p>
+      <p><strong>Product Description:</strong> {supply.description}</p>
+      <p><strong>Quantity In Stock:</strong> {supply.quantity}</p>
       <button>Add To Cart</button>
     </div>
   );

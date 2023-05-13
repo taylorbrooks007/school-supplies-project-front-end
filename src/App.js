@@ -4,12 +4,13 @@ import NewSupply from "./components/NewSupply";
 import Cart from "./components/Cart";
 import Show from "./pages/Show";
 import { useState } from "react";
-// import Edit from "./Components/Edit";
+import Edit from "./pages/Edit";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
 } from "react-router-dom";
+import "./App.css"
 
 
 
@@ -25,10 +26,10 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Index />} />
+          <Route path="/" element={<Index/>} />
           <Route path="/supplies/:id" element={<Show />} />
           <Route path="/newsupply" element={<NewSupply />} />
-          {/* <Route path="/:id/edit" elemment={<Edit />} /> */}
+          <Route path="supplies/:id/edit" element={<Edit />} />
           <Route path="/cart" element={<Cart />} />
         </Routes>
       </Router>

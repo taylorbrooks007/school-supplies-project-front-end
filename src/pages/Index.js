@@ -4,7 +4,6 @@ import Supply from "../components/Supply"
 import { Link } from "react-router-dom";
 
 const API = process.env.REACT_APP_API_URL;
-console.log(API);
 
 export default function Index() {
   const [supplies, setSupplies] = useState([]);
@@ -19,21 +18,16 @@ export default function Index() {
         console.warn("catch", e);
       });
   }, []);
-  console.log(supplies);
+
   return (
     <div className="index">
-      <header>Welcome to School Supply Application</header>
-      <section>
-        {supplies.map((supply, index) => {
-          return (
-            <div key={supply.id}>
-              <Link to={`supply/${supply.id}`}>
-                <h2>{supply.name}</h2>
-              </Link>
-              <Supply key={supply.id} supply={supply} />
-            </div>
-          );
-        })}
+      <h1>Welcome to School Supply Application</h1>
+      <section className="cards">
+        {supplies ? supplies.map((supply) => {
+          return (  
+              <Supply supply={supply} key={supply.id}/>
+          )
+        }): null}
       </section>
     </div>
   );

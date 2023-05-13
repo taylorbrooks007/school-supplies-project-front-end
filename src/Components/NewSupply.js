@@ -44,17 +44,17 @@ export default function NewSupply() {
     });
   }
 
-  function resetForm() {
-    setSupply({
-      name: "",
-      brand: "",
-      // image_url: "",
-      price: "",
-      quantity: 0,
-      descripton: "",
-      in_stock: "",
-    });
-  }
+  // function resetForm() {
+  //   setSupply({
+  //     name: "",
+  //     brand: "",
+  //     // image_url: "",
+  //     price: "",
+  //     quantity: 0,
+  //     descripton: "",
+  //     in_stock: "",
+  //   });
+  // }
   return (
     <div>
       <header>

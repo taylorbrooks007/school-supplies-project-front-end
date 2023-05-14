@@ -4,11 +4,10 @@ import { Link } from "react-router-dom";
 export default function Navbar() {
   return (
     <div>
-      <Link to={`/`}>
-      <h1>
-        School Supply Store
-        </h1>
-      </Link>
+      <article>
+        <Link to={`/`}>
+          <h1>School Supply Store</h1>
+        </Link>
         <ul>
           <Link to="/NewSupply">
             <button>Create New Supply</button>
@@ -17,6 +16,7 @@ export default function Navbar() {
             <button>View Cart</button>
           </Link>
         </ul>
+      </article>
     </div>
   );
 }

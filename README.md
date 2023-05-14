@@ -10,4 +10,4 @@ Miro - https://miro.com/app/board/uXjVMKSINTE=/?share_link_id=321050588645
 How to Navigate our Application : - Index page shows all items available - Click on a single item to see all available info - User should be able to edit & delete any item - User should be able to create new item from button in NavBar
 
 About our Team :
-This project was developed by Ariunaa Myagmar, Tafari Excell & Taylor Brooks. React
+This project was developed by Ariunaa Myagmar, Tafari Excell & Taylor Brooks.

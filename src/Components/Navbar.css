@@ -1,4 +1,17 @@
-h1{
-    align-items: center;
-    border: 2px solid #fee501;
+a{
+   color: #fee501;
+
 }
+article{
+    border: 3px solid #fee501;
+    text-align: center;
+    display: grid;
+    font-weight: bold;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-image: url("https://garden.spoonflower.com/c/5714095/p/f/m/NyG_FggolYkWtMVv82Sq2jPkBnRX9BB-d3NZWG9Izmp84p-FNWGVKreo/Black%20and%20White%20Composition%20Notebook%20-%20Small%20Scale.jpg");
+}
+button{
+    float:center ;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+

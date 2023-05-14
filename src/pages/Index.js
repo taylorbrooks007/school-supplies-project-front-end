@@ -21,7 +21,6 @@ export default function Index({handleCartTotal}) {
 
   return (
     <div className="index">
-      <h1>Welcome to School Supply Application</h1>
       <section className="cards">
         {supplies ? supplies.map((supply) => {
           return (  

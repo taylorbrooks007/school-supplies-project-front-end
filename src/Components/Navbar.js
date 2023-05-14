@@ -1,21 +1,24 @@
-import "./Navbar.css";
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
     <div>
-      <article>
-        <Link to={`/`}>
-          <h1>School Supply Store</h1>
-        </Link>
+      <article className="navbar">
+        <nav>
         <ul>
+          <li>
           <Link to="/NewSupply">
-            <button>Create New Supply</button>
+           Create New Supply
           </Link>
+          </li>
+          <li>
           <Link to="/cart">
-            <button>View Cart</button>
+            View Cart
           </Link>
+          </li>
         </ul>
+        </nav>
+       
       </article>
     </div>
   );

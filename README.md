@@ -1,4 +1,6 @@
-# Welcome to our School Supply Application :pencil2:.
+# Welcome to our School Supply Application :pencil2:
+⭐️⭐️⭐️⭐️⭐️
+
 
 How to Navigate our Application:
 

@@ -1,4 +1,8 @@
+import { FaShoppingCart } from 'react-icons/fa';
 import { Link } from "react-router-dom";
+
+
+
 
 export default function Navbar() {
   return (
@@ -13,6 +17,7 @@ export default function Navbar() {
           </li>
           <li>
           <Link to="/cart">
+          <FaShoppingCart/>
             View Cart
           </Link>
           </li>

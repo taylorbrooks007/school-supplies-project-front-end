@@ -19,8 +19,6 @@ function App() {
     setCart((cart) => [...cart, name]);
   }
 
-  console.log(cart);
-
   return (
     <div className="app">
       <Router>
@@ -30,13 +28,12 @@ function App() {
           <h1>Welcome to School Supplies Application</h1>
           </Link>
           <Navbar />
-          </div>
-         
+          </div> 
         </header>
         <Routes>
           <Route
             path="/"
-            element={<Index handleCartTotal={handleCartTotal} />}
+            element={<Index handleCartTotal={handleCartTotal} total={total} cart={cart}/>}
           />
           <Route
             path="/supplies/:id"

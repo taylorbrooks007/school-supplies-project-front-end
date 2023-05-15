@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 export default function Supply({ supply, handleCartTotal }) {
   return (
     <div className="card">
-      <Link className="product-name" to={`/supplies/${supply.id}`}>
-      <img alt={supply.name} src={supply.image_url} width="400px" />
+      <Link className="product" to={`/supplies/${supply.id}`}>
+      <img alt={supply.name} src={supply.image_url}/>
       <h2 >{supply.name}</h2>
       </Link>
       <p className="product-price">

@@ -42,7 +42,7 @@ export default function SupplyDetails({ handleCartTotal }) {
       <h2>{supply.name}</h2>
       <img alt="image_url" src={supply.image_url} width="400px" />
       <p>Price: ${supply.price}</p>
-      <p>Product Description: {supply.description}</p>
+      <p className="description">Product Description: {supply.description}</p>
       <p>Quantity: {supply.quantity}</p>
       
       <div className="buttons">

@@ -1,4 +1,4 @@
-# Welcome to our School Supply App:pencil2:!
+# Welcome to our School Supplies App:pencil2:!
 
 
 The core purpose of School Supply App is to provide a platform for sellers to list their school supplies and for buyers to browse and buy products. 

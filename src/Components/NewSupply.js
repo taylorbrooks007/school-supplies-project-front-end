@@ -50,10 +50,8 @@ export default function NewSupply(){
   };
 
   return (
-    <div>
-      <header>
+    <div className="new-supply-form">
         <h2>Create New Product</h2>
-      </header>
       <main>
         <form onSubmit={handleSubmit}>
           <label htmlFor="name">Name: </label>
@@ -113,7 +111,7 @@ export default function NewSupply(){
           checked={supply.in_stock}
           onChange={handleCheckboxChange}
           />
-          <input type="submit"/>
+          <input className="button-link" type="submit"/>
           <br />
         </form>
       </main>

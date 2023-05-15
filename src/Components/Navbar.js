@@ -11,13 +11,14 @@ export default function Navbar() {
         <nav>
         <ul>
           <li>
-          <Link to="/NewSupply">
+          <Link className="button-link" to="/NewSupply">
            Create New Supply
           </Link>
           </li>
           <li>
-          <Link to="/cart">
+          <Link to="/cart" className="button-link" >
           <FaShoppingCart/>
+          &nbsp; 
             View Cart
           </Link>
           </li>

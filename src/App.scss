@@ -3,17 +3,11 @@
 $primary-color:  #ffd700;
 $secondary-color: #2e2a12;
 $off-white: #fffdf4;
-// $warning-color: #ffc107;
-// $danger-color: #dc3545;
-
 
 // font variables 
 $heading-font: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;;
 $body-font: 'Open Sans', sans-serif;
 
-.app {
-   
-}
 
 header {
     background-image: url('https://garden.spoonflower.com/c/5714095/p/f/m/NyG_FggolYkWtMVv82Sq2jPkBnRX9BB-d3NZWG9Izmp84p-FNWGVKreo/Black%20and%20White%20Composition%20Notebook%20-%20Small%20Scale.jpg');
@@ -21,8 +15,7 @@ header {
     height: 8rem;
     position: relative;
    
-    
-  
+
     &:before {
       content: '';
       position: absolute;
@@ -99,6 +92,7 @@ header {
     .cart-box {
         background-color: white;
         margin: 1rem;
+        padding: 2rem;
 
     }
 
@@ -148,11 +142,52 @@ header {
 
   }
 
+
   .supplyDetails {
     .description {
         background-color: $off-white;
     }
   }
+
+  .cart-box {
+    font-family: $body-font;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    span {
+        font-size: 1.3rem;  
+    }
+  }
+
+  .new-supply-form {
+    font-family: $body-font;
+  }
+
+  .button-link {
+    font-family: $body-font;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #4CAF50;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button-link:hover {
+    background-color: #45a049;
+  }
+  
+  .button-link:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2);
+  }
+ 
+  
+  
+
  
   
   
@@ -235,13 +270,16 @@ header {
 //     align-items: flex-start;
     
 //   }
-//   form {
-//     box-sizing: border-box;
-//     padding: 2rem;
-//     border-radius: 1rem;
-//     background-color: hsl(0, 0%, 100%);
-//     border: 4px solid hsl(0, 0%, 90%);
-//     display: grid;
-//     grid-template-columns: 1fr 1fr;
-//     gap: 2rem;
-//   }
+  form {
+    width: 30rem;
+    box-sizing: border-box;
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: hsl(0, 0%, 100%);
+    border: 4px solid hsl(0, 0%, 90%);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+
+   
+  }

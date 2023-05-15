@@ -5,39 +5,35 @@ import Cart from "./components/Cart";
 import Show from "./pages/Show";
 import { useState } from "react";
 import Edit from "./pages/Edit";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import "./App.css";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import "./App.scss";
 import SupplyDetails from "./components/SupplyDetails";
 
 function App() {
   const [cart, setCart] = useState([]);
-  // will be an empty array
   const [total, setTotal] = useState(0);
-  // will be a number to set total for cart price
-  //anything
 
-  // function getTotal(price){
-  //   let sum = 0;
-  //   sum+=price;
-  //   setTotal(sum)
-  //   return sum
-  // }
 
   function handleCartTotal(price, name) {
     setTotal((total) => total + Number(price));
     setCart((cart) => [...cart, name]);
   }
 
-  console.log(cart);
-
   return (
-    <div>
+    <div className="app">
       <Router>
-        <Navbar />
+        <header>
+        <div className="header-content">
+          <Link to="/">
+          <h1>Welcome to School Supplies Application</h1>
+          </Link>
+          <Navbar />
+          </div> 
+        </header>
         <Routes>
           <Route
             path="/"
-            element={<Index handleCartTotal={handleCartTotal} />}
+            element={<Index handleCartTotal={handleCartTotal} total={total} cart={cart}/>}
           />
           <Route
             path="/supplies/:id"

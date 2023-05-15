@@ -8,9 +8,6 @@ The core purpose of School Supply App is to provide a platform for sellers to li
 
 
 __Functionalities:__
-- Displaying all of the school supplies products available online.   
-- A seller could add multiple products by clicking "Create Item" button in the navigation bar. 
-- Provides a cart total price with list of items for purchasing. 
 
 __Design Environments:__
 <br>
@@ -29,5 +26,3 @@ __Design Environments:__
 ⭐️Tafari Excell 
 
 
-[Backend Repo](https://github.com/Tafarigit/School-Supplies-Backend)
-[Backend Repo](https://github.com/Tafarigit/School-Supplies-Backend)

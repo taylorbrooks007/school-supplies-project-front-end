@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import "./SupplyDetails.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
+
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -42,8 +42,10 @@ export default function SupplyDetails({ handleCartTotal }) {
       <h2>{supply.name}</h2>
       <img alt="image_url" src={supply.image_url} width="400px" />
       <p>Price: ${supply.price}</p>
-      <p>Product Description: {supply.description}</p>
-      <p>Quantity In Stock: {supply.quantity}</p>
+      <p className="description">Product Description: {supply.description}</p>
+      <p>Quantity: {supply.quantity}</p>
+      
+      <div className="buttons">
       <button onClick={() => handleCartTotal(supply.price, supply)}>
         Add To Cart
       </button>
@@ -51,6 +53,8 @@ export default function SupplyDetails({ handleCartTotal }) {
         <button>Edit</button>
       </Link>
       <button onClick={handleDelete}>Delete</button>
+      </div>
+     
     </div>
   );
 }

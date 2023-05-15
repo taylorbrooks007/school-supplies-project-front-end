@@ -1,21 +1,30 @@
-import "./Navbar.css";
+import { FaShoppingCart } from 'react-icons/fa';
 import { Link } from "react-router-dom";
+
+
+
 
 export default function Navbar() {
   return (
     <div>
-      <article>
-        <Link to={`/`}>
-          <h1>School Supply Store</h1>
-        </Link>
+      <article className="navbar">
+        <nav>
         <ul>
-          <Link to="/NewSupply">
-            <button>Create New Supply</button>
+          <li>
+          <Link className="button-link" to="/NewSupply">
+           Create New Supply
           </Link>
-          <Link to="/cart">
-            <button>View Cart</button>
+          </li>
+          <li>
+          <Link to="/cart" className="button-link" >
+          <FaShoppingCart/>
+          &nbsp; 
+            View Cart
           </Link>
+          </li>
         </ul>
+        </nav>
+       
       </article>
     </div>
   );

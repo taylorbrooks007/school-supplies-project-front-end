@@ -1,11 +1,12 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import Supply from "../components/Supply"
+import Supply from "../components/Supply";
+import Cart from "../components/Cart";
 import { Link } from "react-router-dom";
 
 const API = process.env.REACT_APP_API_URL;
 
-export default function Index({handleCartTotal}) {
+export default function Index({handleCartTotal, total, cart}) {
   const [supplies, setSupplies] = useState([]);
 
   useEffect(() => {
@@ -21,7 +22,6 @@ export default function Index({handleCartTotal}) {
 
   return (
     <div className="index">
-      <h1>Welcome to School Supply Application</h1>
       <section className="cards">
         {supplies ? supplies.map((supply) => {
           return (  
@@ -29,6 +29,9 @@ export default function Index({handleCartTotal}) {
           )
         }): null}
       </section>
+      <div className="cart-box">
+          <Cart total={total} cart={cart}/>
+      </div>
     </div>
   );
 }

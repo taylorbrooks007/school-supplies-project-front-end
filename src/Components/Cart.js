@@ -1,7 +1,6 @@
 export default function Cart({total, cart}) {
-  console.log(cart)
   return (
-  <div className="cart">
+  <div>
       <h1>Cart Total</h1>
     <table className="cart-table">
     <thead>

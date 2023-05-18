@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import Supply from "../components/Supply";
-import Cart from "../components/Cart";
+import Supply from "../Components/Supply";
+import Cart from "../Components/Cart";
 
 
 const API = process.env.REACT_APP_API_URL;
